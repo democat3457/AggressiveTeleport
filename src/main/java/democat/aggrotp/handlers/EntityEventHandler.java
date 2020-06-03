@@ -18,6 +18,7 @@ import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.FakePlayer;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
@@ -205,7 +206,8 @@ public class EntityEventHandler {
                 flag = player.attemptTeleport(event.getTargetX(), event.getTargetY(), event.getTargetZ());
 
                 if (flag) {
-                    SoundMethods.playSound(player, SoundEvents.ENTITY_ENDERMEN_TELEPORT);
+                    SoundEvent sound = new SoundEvent(entry.soundResloc);
+                    SoundMethods.playSound(player, sound);
                     debug("Played tp sound");
                 } else {
                     success = false;
