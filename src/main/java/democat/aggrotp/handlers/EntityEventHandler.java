@@ -218,18 +218,23 @@ public class EntityEventHandler {
         return success;
     }
 
+    @SuppressWarnings("unused")
     private void info(String message) {
         AggroTP.logger.log(Level.INFO, message);
     }
 
+    @SuppressWarnings("unused")
     private void debug(String message) {
-        AggroTP.logger.log(Level.DEBUG, message);
+        if (Configuration.debug)
+            AggroTP.logger.log(Level.DEBUG, message);
     }
 
+    @SuppressWarnings("unused")
     private void warn(String message) {
         AggroTP.logger.log(Level.WARN, message);
     }
 
+    @SuppressWarnings("unused")
     private void error(String message) {
         AggroTP.logger.log(Level.ERROR, message);
     }
