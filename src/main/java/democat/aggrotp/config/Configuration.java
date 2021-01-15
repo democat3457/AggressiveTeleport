@@ -9,6 +9,7 @@ public class Configuration {
     public static Map<ResourceLocation, MobEntry> mobTeleports = new HashMap<>();
     public static int defaultRadius;
     public static ResourceLocation defaultSoundResloc;
+    public static boolean debug;
 
     public static class MobEntry {
         public final ResourceLocation resloc;
