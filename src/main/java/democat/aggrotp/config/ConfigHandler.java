@@ -21,10 +21,11 @@ public class ConfigHandler {
         
         Configuration.defaultRadius = config.getInt("Default Teleport Radius", CATEGORY_MOBTP, 25, 1, Integer.MAX_VALUE, "The default radius that mobs will teleport players to.");
         Configuration.defaultSoundResloc = new ResourceLocation(config.getString("Default Sound", CATEGORY_MOBTP, "minecraft:entity.enderman.teleport", "The default sound that will play when mobs teleport players."));
-
+        Configuration.debug = config.getBoolean("Debug Mode", CATEGORY_MOBTP, false, "Whether the mod should log aggro events to debug.log.");
+        
         for (String s : config.getStringList("Player-teleporting Mobs", CATEGORY_MOBTP,
                 new String[] { "minecraft:enderman;false;10;5" },
-                "Configure mob teleport on aggro in the form entity id;tp all players?;delay in seconds;permitted offset from delay;[optional]tp range;[optional]played sound")) {
+                "Configure mob teleport on aggro in the form <entity id>;<whether to tp all players>;<delay in seconds>;<permitted random offset from delay>;?<tp range>;?<played sound>")) {
             String[] parts = s.split(";");
             
             if (parts.length <= 0) continue;
