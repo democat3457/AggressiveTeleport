@@ -16,7 +16,7 @@ import democat.aggrotp.handlers.*;
 public class AggroTP {
     public static final String MODID = "aggrotp";
     public static final String NAME = "Entity Testing";
-    public static final String VERSION = "0.4.0";
+    public static final String VERSION = "0.4.1";
 
     public static Logger logger;
 
